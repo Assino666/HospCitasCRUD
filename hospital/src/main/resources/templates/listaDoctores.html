@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Lista de doctores</title>
+	<link th:href="@{/bootstrap-5.0.2-dist/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+		<div class="container d-flex align-items-center justify-content-between">
+		
+			<div class="card-body">
+			
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th scope="col">Nombre</th>
+				      <th scope="col">Ape Paterno</th>
+				      <th scope="col">Ape Materno</th>
+				      <th scope="col">Especialidad</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  
+				    <tr th:each="doctor: ${listaDoctores}" >
+
+				      <td th:text='${doctor.nombreDoctor}'></td>
+				      <td th:text='${doctor.apellidoPaterno}'></td>
+				      <td th:text='${doctor.apellidoMaterno}'></td>
+				      <td th:text='${doctor.fkEspecialidad.nombre}'></td>
+
+				    </tr>
+				    
+				    
+				  </tbody>
+				</table>			
+			
+			</div>
+				
+		</div>
+</body>
+</html>

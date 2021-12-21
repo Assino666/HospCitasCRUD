@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Altas de Citas </title>
+	<link th:href="@{/bootstrap-5.0.2-dist/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+
+		<div class="container d-flex align-items-center justify-content-between">
+		
+			
+			<form  th:action="@{/guardarDoctor}" method="post" th:object="${doctor}">
+			
+              <div class="row">
+                <select class="form-select" th:field="*{especialidad}" aria-label="Default select example">
+					  <option value="1">Homeopatia</option>
+					  <option value="2">Urologo</option>
+					  <option value="3">Diagnosta</option>
+					  <option value="4">Plastico</option>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" name="nombre" placeholder="Escriba su nombre" required="required">
+                  </div>
+                </div>
+                
+                
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="email">Ape Paterno</label>
+                    <input type="text" class="form-control" id="email" th:field="*{apePaterno}" name="email" placeholder="Ape Paterno" required="required">
+                  </div> 
+                </div>    
+                
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="username">Ape Materno</label>
+                    <input type="text" class="form-control" id="username" th:field="*{apeMaterno}" name="username" placeholder="Ape Materno" required="required">
+                  </div>
+                </div>
+                
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="password">Especialidad</label>
+                    <!-- <input type="text" class="form-control" id="password" th:field="*{especialidad}" name="password" placeholder="Especialidad" required="required"> -->
+                    
+                    
+                    
+					
+					</select>                    
+                    
+                    
+                  </div>
+                </div>
+              </div> 			
+               
+			<button type="submit" class="btn btn-primary">Guardar</button>
+			
+			</form>
+			
+			
+			
+		</div>
+
+</body>
+</html>
